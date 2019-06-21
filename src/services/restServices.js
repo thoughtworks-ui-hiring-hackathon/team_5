@@ -1,6 +1,17 @@
 import ServiceBase from './ServiceClass';
 
 class RestServices {
+    getLatestMoviesDetails = ({config} = {}) => {
+        config = {
+            ...config,
+            params: {
+                api_key: ''
+            }
+        };
+        const url = '/movie/now_playing';
+        return ServiceBase.ajax.get(url, config);
+    };
+
     getMoviesDetails = ({config} = {}) => {
         config = {
             ...config,
@@ -9,6 +20,16 @@ class RestServices {
             }
         };
         const url = `/movie/${config.id}`;
+        return ServiceBase.ajax.get(url, config);
+    };
+
+    getMoviesGenres = ({config} = {}) => {
+        config = {
+            params: {
+                api_key: ''
+            }
+        };
+        const url = '/genre/movie/list';
         return ServiceBase.ajax.get(url, config);
     };
     

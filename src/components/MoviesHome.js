@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import MoviesCard from './moviesCard';
 
 export default class MoviesHome extends Component {
 
@@ -9,7 +10,8 @@ export default class MoviesHome extends Component {
     }
 
     fetchMoviesList() {
-        this.props.getMoviesList()
+        this.props.getLatestMoviesList();
+        this.props.getMoviesGenresList();
     }
 
     showDetailsPage(movieId) {
@@ -18,7 +20,7 @@ export default class MoviesHome extends Component {
         history.push(`./movieDetails/${movieId}`);
     }
 
-    
+
 
     render() {
         return (
@@ -26,6 +28,10 @@ export default class MoviesHome extends Component {
                 <div> Welcome to TV Show</div>
                 <input type="button" onClick={this.fetchMoviesList} value={"Get Movies"} />
                 <input type="button" onClick={() => this.showDetailsPage(320288)} value="Show More" />
+                {
+                    this.props.LatestMovies &&
+                        <MoviesCard  props={this.props}/>
+                }
             </div>
         )
     }

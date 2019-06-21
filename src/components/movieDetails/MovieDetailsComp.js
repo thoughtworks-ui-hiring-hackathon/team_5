@@ -4,11 +4,11 @@ import {imageUrl} from '../../config';
 class MovieDetailsComp extends Component {
 
     componentDidMount() {
-        const {getMoviesList} = this.props;
+        const {getMovieDetails} = this.props;
         const {pathname} = window.location;
         const movieId = pathname.replace('/movieDetails/', '')
-        if(getMoviesList) {
-            getMoviesList(movieId);
+        if(getMovieDetails) {
+            getMovieDetails(movieId);
         }
     }
 

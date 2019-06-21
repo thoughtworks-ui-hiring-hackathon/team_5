@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {getMovies} from './actions/simple-action';
+import {getLatestMovies, getMoviesGenres, getMovieDetails} from './actions/simple-action';
 import {ConnectedRouter } from 'connected-react-router';
 import ApplicationRoutes from './routes/Routes';
 import './scss/style.scss';
@@ -15,8 +15,9 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
     const {simpleReducer = {}} = state;
-
     return {
+        LatestMovies: simpleReducer.LatestMovies,
+        MovieGenresList: simpleReducer.MovieGenresList,
         movieDetails: simpleReducer.movieDetails
     }
 };
@@ -26,7 +27,9 @@ const mapDispatchToProps = (dispatch) => {
         // getInputDetails: () => dispatch(getInputDetails()),
         // setOutputDetails: (data) => dispatch(setOutputDetails(data)),
         // getNewChallenge: () => dispatch(getChallenge()),
-        getMoviesList: (id) => dispatch(getMovies(id))
+        getMovieDetails: (id) => dispatch(getMovieDetails(id)),
+        getLatestMoviesList: () => dispatch(getLatestMovies()),
+        getMoviesGenresList: () => dispatch(getMoviesGenres())
     };
 };
 

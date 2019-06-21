@@ -11,6 +11,17 @@ const appReducer = (state = [], action) => {
                 movieDetails: payload
             };
             return newState;
+        case ACTION_TYPES.GET_LATEST_MOVIES_DETAILS:
+            newState = {
+                ...state,
+                LatestMovies: payload.results
+            };
+            return newState;
+        case ACTION_TYPES.GET_MOVIES_GENRES:
+            newState = {
+                ...state,
+                MovieGenresList: payload.genres
+            };
         case ACTION_TYPES.GET_CHALLENGE_DETAILS:
             newState = {
                 ...state,

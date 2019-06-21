@@ -6,7 +6,7 @@ export default class MyApp extends Component {
         super(props);
         this.prepareOutputPayload = this.prepareOutputPayload.bind(this);
         this.getNewChallenge = this.getNewChallenge.bind(this);
-        this.getInputForChallenge = this.getInputForChallenge.bind(this);
+        this.showDetailsPage = this.showDetailsPage.bind(this);
         this.executeChallenge = this.executeChallenge.bind(this);
     }
 
@@ -83,10 +83,10 @@ export default class MyApp extends Component {
         this.props.getNewChallenge();
     }
 
-    getInputForChallenge() {
+    showDetailsPage(movieId) {
         // this.props.getInputDetails();
         const {history} = this.props;
-        history.push("./tryRoute");
+        history.push("./movieDetails");
     }
 
     static isProductActive(obj) {
@@ -129,7 +129,7 @@ export default class MyApp extends Component {
                         <div>{challenge.message}</div>
                 }
 
-                <input type="button" onClick={this.getInputForChallenge} value="Get Input for Challenge" />
+                <input type="button" onClick={() => this.showDetailsPage(1)} value="Show More" />
                 <input type="button" onClick={() => this.executeChallenge(currentStage)} value="Execute Challenge" />
 
             </div>
