@@ -29,6 +29,36 @@ const getMovieDetails = (id) => {
     }
 };
 
+const getActorDetail = (id) => {
+    return (dispatch) => {
+        Services.getActorDetail({config: {id}}).then((res) => {
+            dispatch({
+                type: ACTION_TYPES.GET_ACTOR_DETAILS,
+                payload: res
+            });
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
+};
+
+
+
+const getRelatedMovieDetails = (id) => {
+    return (dispatch) => {
+        Services.getRelatedMovieDetails({config: {id}}).then((res) => {
+            dispatch({
+                type: ACTION_TYPES.GET_RELATED_MOVIES,
+                payload: res
+            });
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
+};
+
 const getMoviesGenres = () => {
     return (dispatch) => {
         Services.getMoviesGenres().then((res = {}) => {
@@ -76,5 +106,7 @@ export {
     getMovieDetails,
     getMoviesGenres,
     setOutputDetails,
+    getActorDetail,
+    getRelatedMovieDetails,
     getChallenge
 }
