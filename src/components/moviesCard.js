@@ -1,5 +1,6 @@
 import React from 'react';
 import isEmpty from 'lodash/isEmpty';
+import {Link} from 'react-router-dom';
 import {imageUrl} from '../config';
 
 export default function MoviesCard({movie, MovieGenresList, history}) {
@@ -42,7 +43,7 @@ export default function MoviesCard({movie, MovieGenresList, history}) {
                 </div>
                 <div className="rating">
                     <span className="star-icon">{vote_average}</span>
-                    <span className="show-more-link" onClick={goToMovieDetails}>show more</span>
+                    <Link to={`/movieDetails/${movie.id}`} activeClassName="active">Show More</Link>
                 </div>
             </div>
         </section>
