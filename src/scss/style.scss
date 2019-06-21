@@ -17,6 +17,10 @@
   .movie-cover-image {
     height: 60%;
     background-color: #ddd;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
   .movie-info-area {
     padding: 14px;

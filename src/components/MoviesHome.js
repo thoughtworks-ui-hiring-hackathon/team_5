@@ -32,9 +32,9 @@ export default class MoviesHome extends Component {
     }
 
     createChildren(movies) {
-        const {MovieGenresList} = this.props;
+        const {MovieGenresList, history} = this.props;
         return movies.map(movie => {
-            return <MoviesCard  movie={movie} MovieGenresList={MovieGenresList} />
+            return <MoviesCard  movie={movie} MovieGenresList={MovieGenresList} history={history} />
         });
     }
 
@@ -59,9 +59,9 @@ export default class MoviesHome extends Component {
         }
         return (
             <div className="movies-list">
-                <div> Welcome to TV Show</div>
-                <input type="button" onClick={this.fetchMoviesList} value={"Get Movies"} />
-                <input type="button" onClick={() => this.showDetailsPage(320288)} value="Show More" />
+                {/*<div> Welcome to TV Show</div>*/}
+                {/*<input type="button" onClick={this.fetchMoviesList} value={"Get Movies"} />*/}
+                {/*<input type="button" onClick={() => this.showDetailsPage(320288)} value="Show More" />*/}
                 <div>
                     <div className="movie-type-header"> Latest Movies </div>
                     <ItemsCarousel
