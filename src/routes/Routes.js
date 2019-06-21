@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import MoviesHome from '../components/MoviesHome';
 import MovieDetailsComp from '../components/movieDetails/MovieDetailsComp';
 
-
 export default function ApplicationRoutes({props}) {
     return (
         <Router>

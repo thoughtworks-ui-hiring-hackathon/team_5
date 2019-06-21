@@ -1,11 +1,11 @@
 import {ACTION_TYPES} from '../consts';
 import Services from '../services/restServices';
 
-const getMovies = () => {
+const getLatestMovies = () => {
     return (dispatch) => {
-        Services.getMoviesDetails().then((res) => {
+        Services.getLatestMoviesDetails().then((res = {}) => {
             dispatch({
-                type: ACTION_TYPES.GET_MOVIES_DETAILS,
+                type: ACTION_TYPES.GET_LATEST_MOVIES_DETAILS,
                 payload: res
             });
         }).catch(function (error) {
@@ -15,11 +15,11 @@ const getMovies = () => {
     }
 };
 
-const getInputDetails = () => {
+const getMoviesGenres = () => {
     return (dispatch) => {
-        Services.getInputDetails().then((res) => {
+        Services.getMoviesGenres().then((res = {}) => {
             dispatch({
-                type: ACTION_TYPES.GET_INPUT_DETAILS,
+                type: ACTION_TYPES.GET_MOVIES_GENRES,
                 payload: res
             });
         }).catch(function (error) {
@@ -58,8 +58,8 @@ const getChallenge = () => {
 };
 
 export {
-    getMovies,
-    getInputDetails,
+    getLatestMovies,
+    getMoviesGenres,
     setOutputDetails,
     getChallenge
 }
