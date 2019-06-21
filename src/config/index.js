@@ -1,5 +1,5 @@
 
-const baseUrl= " https://http-hunt.thoughtworks-labs.net";
+const baseUrl= "https://api.themoviedb.org/3/movie/550";
 
 export {
     baseUrl as default

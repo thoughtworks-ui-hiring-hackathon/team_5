@@ -17,7 +17,6 @@ class ServiceClass {
             baseUrl,
             params: {},
             headers: {
-                'UserID': 'vn-djNpFH',
                 'Accept-Language': locale,
                 'Content-Type': 'application/json',
             },
