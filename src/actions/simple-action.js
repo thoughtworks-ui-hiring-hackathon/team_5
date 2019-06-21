@@ -47,7 +47,7 @@ const getTrendingMovies = () => {
     return (dispatch) => {
         Services.getTrendingMovies().then((res = {}) => {
             dispatch({
-                type: ACTION_TYPES.GET_MOST_WATCHED_MOVIES_DETAILS,
+                type: ACTION_TYPES.GET_TRENDING_MOVIES_DETAILS,
                 payload: res
             });
         }).catch(function (error) {
