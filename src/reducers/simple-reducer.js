@@ -17,6 +17,12 @@ const appReducer = (state = [], action) => {
                 LatestMovies: payload.results
             };
             return newState;
+        case ACTION_TYPES.GET_RELATED_MOVIES:
+                newState = {
+                    ...state,
+                    relatedMovies: payload.results
+                };
+            return newState;
         case ACTION_TYPES.GET_MOST_WATCHED_MOVIES_DETAILS:
             newState = {
                 ...state,
@@ -34,6 +40,12 @@ const appReducer = (state = [], action) => {
                 ...state,
                 MovieGenresList: payload.genres
             };
+            return newState;
+        case ACTION_TYPES.GET_ACTOR_DETAILS:
+                newState = {
+                    ...state,
+                    actorDetails: payload
+                };
             return newState;
         case ACTION_TYPES.GET_CHALLENGE_DETAILS:
             newState = {

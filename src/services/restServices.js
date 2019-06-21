@@ -29,7 +29,26 @@ class RestServices {
         return ServiceBase.ajax.get(url, config);
     };
     getMoviesDetails = ({config} = {}) => {
-        const url = `/movie/${config.id}`;
+        const url = `/movie/${config.id}`; 
+        const con = {
+            ...config,
+            ...configGlobal
+        }
+        con.params.language = 'en-US';
+        con.params.append_to_response = 'credits';
+        return ServiceBase.ajax.get(url, con);
+    };
+
+    getActorDetail = ({config} = {}) => {
+        const url = `/person/${config.id}`;
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
+    };
+
+    getRelatedMovieDetails = ({config} = {}) => {
+        const url = `/movie/${config.id}/similar`;
         return ServiceBase.ajax.get(url, {
             ...config,
             ...configGlobal

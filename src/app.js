@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {getLatestMovies, getMoviesGenres, getMovieDetails, getTrendingMovies, getMostWatchedMovies} from './actions/simple-action';
+import {getLatestMovies, getMoviesGenres, getMovieDetails, 
+    getRelatedMovieDetails, getActorDetail, getTrendingMovies, 
+    getMostWatchedMovies} from './actions/simple-action';
 import {ConnectedRouter } from 'connected-react-router';
 import ApplicationRoutes from './routes/Routes';
 import './scss/style.scss';
@@ -20,7 +22,9 @@ const mapStateToProps = (state) => {
         MovieGenresList: simpleReducer.MovieGenresList,
         movieDetails: simpleReducer.movieDetails,
         TrendingMovies: simpleReducer.TrendingMovies,
-        MostWatchedMovies: simpleReducer.MostWatchedMovies
+        MostWatchedMovies: simpleReducer.MostWatchedMovies,
+        relatedMovies: simpleReducer.relatedMovies,
+        actorDetails: simpleReducer.actorDetails
     }
 };
 
@@ -30,9 +34,11 @@ const mapDispatchToProps = (dispatch) => {
         // setOutputDetails: (data) => dispatch(setOutputDetails(data)),
         // getNewChallenge: () => dispatch(getChallenge()),
         getMovieDetails: (id) => dispatch(getMovieDetails(id)),
+        getRelatedMovieDetails: (id) => dispatch(getRelatedMovieDetails(id)),
         getLatestMoviesList: () => dispatch(getLatestMovies()),
         getMoviesGenresList: () => dispatch(getMoviesGenres()),
         getTrendingMoviesList: () => dispatch(getTrendingMovies()),
+        getActorDetails: (id) => dispatch(getActorDetail(id)),
         getMostWatchedMoviesList: () => dispatch(getMostWatchedMovies())
     };
 };

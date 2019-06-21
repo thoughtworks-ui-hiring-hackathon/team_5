@@ -1,22 +1,22 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import MoviesHome from '../components/MoviesHome';
-import MovieDetailsComp from '../components/movieDetails/MovieDetailsComp';
-
+import MovieDetailsMainComp from '../components/movieDetails/MovieDetailsMainComp';
+import ActorDetailsComp  from '../components/ActorDetailsComp';
 
 export default function ApplicationRoutes({props}) {
     return (
         <Router>
             <Route exact path="/" render={() =>
-                <MoviesHome {...props} />}
-           />
-            <Route path="/movieDetails" component={MovieDetailsComp} />
-            <Route exact path="/movieDetails/:id" render={() =>
-                <MovieDetailsComp {...props} getMoviesList={props.getMoviesList} />}
-            />
+                <MoviesHome {...props} />} />
+            <Route exact path="/movieDetails/:id" render={() => 
+                <MovieDetailsMainComp {...props} />} />
+
+            <Route exact path="/actors/:id" render={() => 
+                <ActorDetailsComp {...props} />} />
+                
             <Route path="/home" render={() =>
-                <MoviesHome {...props} />}
-            />
+                <MoviesHome {...props} />} />
         </Router>
     );
 };
