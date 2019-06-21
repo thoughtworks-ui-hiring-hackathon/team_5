@@ -21,7 +21,7 @@ class RestServices {
     };
 
     getTrendingMovies = ({config} = {}) => {
-        const url = '/trending/movie';
+        const url = '/trending/movie/week';
         return ServiceBase.ajax.get(url, {
             ...config,
             ...configGlobal
