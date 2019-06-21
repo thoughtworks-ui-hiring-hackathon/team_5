@@ -1,5 +1,5 @@
 
-const baseUrl= "https://api.themoviedb.org/3/movie/550";
+const baseUrl= "https://api.themoviedb.org/3";
 
 export {
     baseUrl as default
