@@ -8,8 +8,26 @@ class RestServices {
             ...config,
             ...configGlobal
         });
+        return ServiceBase.ajax.get(url, config);
     };
 
+    getMostWatchedMovies = ({config} = {}) => {
+        const url = '/movie/popular';
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
+        return ServiceBase.ajax.get(url, config);
+    };
+
+    getTrendingMovies = ({config} = {}) => {
+        const url = '/trending/movie/week';
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
+        return ServiceBase.ajax.get(url, config);
+    };
     getMoviesDetails = ({config} = {}) => {
         const url = `/movie/${config.id}`; 
         const con = {
@@ -43,6 +61,7 @@ class RestServices {
             ...config,
             ...configGlobal
         });
+        return ServiceBase.ajax.get(url, config);
     };
     
 

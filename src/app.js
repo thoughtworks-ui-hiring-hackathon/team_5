@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {getLatestMovies, getMoviesGenres, getMovieDetails, getRelatedMovieDetails, getActorDetail} from './actions/simple-action';
+import {getLatestMovies, getMoviesGenres, getMovieDetails, 
+    getRelatedMovieDetails, getActorDetail, getTrendingMovies, 
+    getMostWatchedMovies} from './actions/simple-action';
 import {ConnectedRouter } from 'connected-react-router';
 import ApplicationRoutes from './routes/Routes';
 import './scss/style.scss';
@@ -19,6 +21,8 @@ const mapStateToProps = (state) => {
         LatestMovies: simpleReducer.LatestMovies,
         MovieGenresList: simpleReducer.MovieGenresList,
         movieDetails: simpleReducer.movieDetails,
+        TrendingMovies: simpleReducer.TrendingMovies,
+        MostWatchedMovies: simpleReducer.MostWatchedMovies,
         relatedMovies: simpleReducer.relatedMovies,
         actorDetails: simpleReducer.actorDetails
     }
@@ -33,7 +37,9 @@ const mapDispatchToProps = (dispatch) => {
         getRelatedMovieDetails: (id) => dispatch(getRelatedMovieDetails(id)),
         getLatestMoviesList: () => dispatch(getLatestMovies()),
         getMoviesGenresList: () => dispatch(getMoviesGenres()),
+        getTrendingMoviesList: () => dispatch(getTrendingMovies()),
         getActorDetails: (id) => dispatch(getActorDetail(id)),
+        getMostWatchedMoviesList: () => dispatch(getMostWatchedMovies())
     };
 };
 
