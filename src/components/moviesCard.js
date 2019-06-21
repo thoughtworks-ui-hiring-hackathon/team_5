@@ -16,7 +16,7 @@ export default function MoviesCard({movie, MovieGenresList, history}) {
         getMovieType = MovieGenresList.filter(getMovieFlavor);
     }
 
-    const goToMovieDetails = (e) => {
+    const goToMovieDetails = () => {
         history.push(`./movieDetails/${movie.id}`);
         console.log("Clicked Show more:" + movie.id);
     };
