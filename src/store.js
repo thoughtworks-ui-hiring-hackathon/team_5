@@ -7,7 +7,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reduxEnhancer = composeEnhancers(
 	applyMiddleware(thunk)
-)
+);
+
 
 
 export default function configureStore(initialState = {}) {

@@ -1,14 +1,25 @@
-import {SIMPLE_ACTION} from '../actions/simple-action'
+import {ACTION_TYPES} from '../consts';
 
-export default (state = {}, action) => {
-	switch (action.type) {
+const appReducer = (state = [], action) => {
+    const {type, payload} = action;
+    let newState = {};
 
-		case SIMPLE_ACTION:
-			return {
-				result: action.payload
-			}
+    switch (type) {
+        case ACTION_TYPES.GET_INPUT_DETAILS:
+            newState = {
+                ...state,
+                input: payload
+            };
+            return newState;
+        case ACTION_TYPES.GET_CHALLENGE_DETAILS:
+            newState = {
+                ...state,
+                challenge: payload
+            };
+            return newState;
+        default:
+            return state
+    }
+};
 
-		default:
-			return state
-	}
-}
+export default appReducer
