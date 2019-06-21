@@ -1,13 +1,9 @@
 @import "app";
 @import "index";
-.movies-list {
-  div {
-    .movies-type-header {
-      font-size: 40px;
-      font-weight: 700;
-    }
-  }
 
+.movies-type-header {
+  font-size: 40px;
+  font-weight: 700;
 }
 .movies-card {
   //width: 30%;

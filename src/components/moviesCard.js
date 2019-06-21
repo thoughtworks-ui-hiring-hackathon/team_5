@@ -29,7 +29,7 @@ export default function MoviesCard({movie, MovieGenresList, history}) {
             <div className="movie-info-area">
                 <div className="movie-title">
                     <span className="title">{title}</span>
-                    <span className="favorite-con">Heart icon</span>
+                    <span className="favorite-con">Fav icon</span>
                 </div>
                 <div className="movie-type">{
                     getMovieType.map((type, index) => {
@@ -42,7 +42,7 @@ export default function MoviesCard({movie, MovieGenresList, history}) {
                 </div>
                 <div className="rating">
                     <span className="star-icon">{vote_average}</span>
-                    <span className="show-more-link" onClick={(e) => goToMovieDetails(e)}>show more</span>
+                    <span className="show-more-link" onClick={goToMovieDetails}>show more</span>
                 </div>
             </div>
         </section>
