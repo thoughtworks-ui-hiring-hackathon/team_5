@@ -7,11 +7,16 @@ import MovieDetailsComp from '../components/movieDetails/MovieDetailsComp';
 export default function ApplicationRoutes({props}) {
     return (
         <Router>
-            <Route exact path="/" component={MoviesHome} />
-            <Route exact path="/movieDetails/:id" render={() => 
+            <Route exact path="/" render={() =>
+                <MoviesHome {...props} />}
+           />
+            <Route path="/movieDetails" component={MovieDetailsComp} />
+            <Route exact path="/movieDetails/:id" render={() =>
                 <MovieDetailsComp {...props} getMoviesList={props.getMoviesList} />}
             />
-            <Route path="/home" component={MoviesHome} />
+            <Route path="/home" render={() =>
+                <MoviesHome {...props} />}
+            />
         </Router>
     );
 };

@@ -6,7 +6,7 @@ export const configGlobal = {
     params: {
         api_key: 'ca56071fbd69d53f89bdb60290d79c04'
     }
-}
+};
 
 export {
     baseUrl as default

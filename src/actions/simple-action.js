@@ -43,6 +43,34 @@ const getMoviesGenres = () => {
     }
 };
 
+const getTrendingMovies = () => {
+    return (dispatch) => {
+        Services.getTrendingMovies().then((res = {}) => {
+            dispatch({
+                type: ACTION_TYPES.GET_MOST_WATCHED_MOVIES_DETAILS,
+                payload: res
+            });
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
+};
+
+const getMostWatchedMovies = () => {
+    return (dispatch) => {
+        Services.getMostWatchedMovies().then((res = {}) => {
+            dispatch({
+                type: ACTION_TYPES.GET_MOST_WATCHED_MOVIES_DETAILS,
+                payload: res
+            });
+        }).catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
+};
+
 const setOutputDetails = (data) => {
     return (dispatch) => {
         Services.setOutputDetails({data}).then((res) => {
@@ -72,6 +100,8 @@ const getChallenge = () => {
 };
 
 export {
+    getTrendingMovies,
+    getMostWatchedMovies,
     getLatestMovies,
     getMovieDetails,
     getMoviesGenres,

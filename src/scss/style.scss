@@ -1,7 +1,54 @@
 @import "app";
 @import "index";
+.movies-list {
+  div {
+    .movies-type-header {
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
 
-
+}
+.movies-card {
+  //width: 30%;
+  height: 450px;
+  border: 1px solid #bbb;
+  margin: 30px;
+  .movie-cover-image {
+    height: 60%;
+    background-color: #ddd;
+  }
+  .movie-info-area {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 30%;
+    .movie-title {
+      display: flex;
+      justify-content: space-between;
+      .title {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .favorite-con {
+        color: red;
+      }
+    }
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      .star-icon {
+        color: yellow;
+      }
+      .show-more-link {
+        color: #61dafb;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
 .movie-details-view {
   border: 1px solid black;

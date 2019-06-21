@@ -17,11 +17,24 @@ const appReducer = (state = [], action) => {
                 LatestMovies: payload.results
             };
             return newState;
+        case ACTION_TYPES.GET_MOST_WATCHED_MOVIES_DETAILS:
+            newState = {
+                ...state,
+                MostWatchedMovies: payload.results
+            };
+            return newState;
+        case ACTION_TYPES.GET_TRENDING_MOVIES_DETAILS:
+            newState = {
+                ...state,
+                TrendingMovies: payload.results
+            };
+            return newState;
         case ACTION_TYPES.GET_MOVIES_GENRES:
             newState = {
                 ...state,
                 MovieGenresList: payload.genres
             };
+            return newState;
         case ACTION_TYPES.GET_CHALLENGE_DETAILS:
             newState = {
                 ...state,
