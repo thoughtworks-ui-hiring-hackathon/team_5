@@ -3,11 +3,12 @@ import ServiceBase from './ServiceClass';
 class RestServices {
     getMoviesDetails = ({config} = {}) => {
         config = {
+            ...config,
             params: {
                 api_key: ''
             }
         };
-        const url = '';
+        const url = `/movie/${config.id}`;
         return ServiceBase.ajax.get(url, config);
     };
     

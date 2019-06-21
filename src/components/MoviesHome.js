@@ -15,7 +15,7 @@ export default class MoviesHome extends Component {
     showDetailsPage(movieId) {
         // this.props.getInputDetails();
         const {history} = this.props;
-        history.push("./movieDetails");
+        history.push(`./movieDetails/${movieId}`);
     }
 
     
@@ -25,7 +25,7 @@ export default class MoviesHome extends Component {
             <div>
                 <div> Welcome to TV Show</div>
                 <input type="button" onClick={this.fetchMoviesList} value={"Get Movies"} />
-                <input type="button" onClick={() => this.showDetailsPage(1)} value="Show More" />
+                <input type="button" onClick={() => this.showDetailsPage(320288)} value="Show More" />
             </div>
         )
     }

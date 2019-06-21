@@ -5,10 +5,10 @@ const appReducer = (state = [], action) => {
     let newState = {};
 
     switch (type) {
-        case ACTION_TYPES.GET_INPUT_DETAILS:
+        case ACTION_TYPES.GET_MOVIES_DETAILS:
             newState = {
                 ...state,
-                input: payload
+                movieDetails: payload
             };
             return newState;
         case ACTION_TYPES.GET_CHALLENGE_DETAILS:

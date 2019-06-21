@@ -14,11 +14,10 @@ const App = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    const {app = {}} = state;
+    const {simpleReducer = {}} = state;
 
     return {
-        input: app.input,
-        challenge: app.challenge
+        movieDetails: simpleReducer.movieDetails
     }
 };
 
@@ -27,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
         // getInputDetails: () => dispatch(getInputDetails()),
         // setOutputDetails: (data) => dispatch(setOutputDetails(data)),
         // getNewChallenge: () => dispatch(getChallenge()),
-        getMoviesList: () => dispatch(getMovies())
+        getMoviesList: (id) => dispatch(getMovies(id))
     };
 };
 

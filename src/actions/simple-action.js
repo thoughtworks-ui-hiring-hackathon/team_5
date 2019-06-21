@@ -1,9 +1,9 @@
 import {ACTION_TYPES} from '../consts';
 import Services from '../services/restServices';
 
-const getMovies = () => {
+const getMovies = (id) => {
     return (dispatch) => {
-        Services.getMoviesDetails().then((res) => {
+        Services.getMoviesDetails({config: {id}}).then((res) => {
             dispatch({
                 type: ACTION_TYPES.GET_MOVIES_DETAILS,
                 payload: res

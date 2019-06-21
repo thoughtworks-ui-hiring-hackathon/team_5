@@ -8,8 +8,7 @@ export default function ApplicationRoutes({props}) {
     return (
         <Router>
             <Route exact path="/" component={MoviesHome} />
-            <Route path="/movieDetails" component={MovieDetailsComp} />
-            <Route path="/movieDetails" render={() => 
+            <Route exact path="/movieDetails/:id" render={() => 
                 <MovieDetailsComp {...props} getMoviesList={props.getMoviesList} />}
             />
             <Route path="/home" component={MoviesHome} />
