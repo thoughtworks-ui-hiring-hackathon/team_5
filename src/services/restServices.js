@@ -1,38 +1,32 @@
 import ServiceBase from './ServiceClass';
+import {configGlobal} from '../config';
 
 class RestServices {
     getLatestMoviesDetails = ({config} = {}) => {
-        config = {
-            ...config,
-            params: {
-                api_key: ''
-            }
-        };
         const url = '/movie/now_playing';
-        return ServiceBase.ajax.get(url, config);
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
     };
 
     getMoviesDetails = ({config} = {}) => {
-        config = {
-            ...config,
-            params: {
-                api_key: ''
-            }
-        };
         const url = `/movie/${config.id}`;
-        return ServiceBase.ajax.get(url, config);
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
     };
 
     getMoviesGenres = ({config} = {}) => {
-        config = {
-            params: {
-                api_key: ''
-            }
-        };
         const url = '/genre/movie/list';
-        return ServiceBase.ajax.get(url, config);
+        return ServiceBase.ajax.get(url, {
+            ...config,
+            ...configGlobal
+        });
     };
     
+
     getChallenge = ({config} = {}) => {
         const getChallengeUrl = '/challenge';
         return ServiceBase.ajax.get(getChallengeUrl, config);
